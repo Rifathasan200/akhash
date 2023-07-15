@@ -1,0 +1,140 @@
+/*------------------------------
+20. brand css
+------------------------------*/
+@use "../utils" as *;
+
+
+.brand-area-1 {
+    top: -65px;
+
+    @media #{$xs} {
+        padding-bottom: 0px;
+    }
+}
+
+.brand-wrapper {
+    background: var(--clr-common-white);
+    box-shadow: 0px 5px 30px rgba(20, 20, 20, 0.1);
+}
+
+.brand-slider {
+    position: relative;
+
+    &::before {
+        width: 1px;
+        height: 100%;
+        background: var(--clr-common-white);
+        position: absolute;
+        top: 0;
+        inset-inline-end: 0;
+        content: "";
+        z-index: 1;
+    }
+}
+
+.brand-item {
+    transition: 0.4s;
+    position: relative;
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    height: 134px;
+
+    &::after {
+        width: 1px;
+        height: 100%;
+        background: var(--clr-bg-9);
+        position: absolute;
+        top: 0;
+        inset-inline-end: 0;
+        opacity: 0.1;
+        content: "";
+        @media #{$xxs}{
+            display: none;
+        }
+    }
+
+    img {
+        opacity: 0.4;
+        filter: grayscale(80%);
+    }
+
+    &:hover img {
+        opacity: 1;
+        filter: grayscale(0%);
+    }
+}
+
+// Brand area end
+
+// Home-2 Brand start
+.ak-brand2-bg {
+    background: var(--clr-common-white);
+    border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+}
+
+.ak-brand2-wrapper {
+    padding: 70px 0px;
+
+    .brand-slider {
+        .ak-brand2-item {
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+
+            &::after {
+                width: 1px;
+                height: 100%;
+                background: var(--clr-bg-9);
+                position: absolute;
+                top: 0;
+                inset-inline-end: 0;
+                opacity: 0.1;
+                content: "";
+
+                @media #{$xxs} {
+                    display: none;
+                }
+            }
+
+            img {
+                opacity: 0.4;
+                filter: grayscale(80%);
+            }
+
+            &:hover img {
+                opacity: 1;
+                filter: grayscale(0%);
+            }
+        }
+    }
+}
+
+// Brand-4 area start
+
+.ak-brand4-shadow {
+    border: 1px solid rgba(20, 20, 20, .1);
+    box-shadow: none;
+}
+
+// Brand-5 area start
+
+.inner-brand-border {
+    border-top: 1px solid rgba(20, 20, 20, 0.1);
+    border-bottom: 1px solid rgba(20, 20, 20, 0.1);
+    margin-bottom: 235px;
+    @media #{$sm,$xs,$xxs}{
+        margin-bottom: 170px;
+    }
+}
+
+.ak-brand2-wrapper .inner-sub-title {
+    font-size: 18px;
+    font-weight: var(--bd-fw-medium);
+    position: absolute;
+    top: -17px;
+    left: 50%;
+    transform: translateX(-50%);
+}

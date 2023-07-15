@@ -1,0 +1,528 @@
+/*------------------------------
+31. counter css
+------------------------------*/
+@use "../utils" as *;
+
+.ak-counter2-area-top {
+    position: relative;
+    margin-top: -107px;
+
+    @media #{$md} {
+        margin-top: -80px;
+    }
+    @media #{$sm,$xs,$xxs}{
+        margin-top: -165px;
+    }
+}
+
+.ak-counter2-bg {
+    position: relative;
+    overflow: hidden;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.ak-counter2-bg-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .8);
+
+    .ak-counter2-bg-top-left-shape {
+        position: absolute;
+        top: -22px;
+        left: -23px;
+
+        @media #{$xs} {
+            top: -35px;
+        }
+    }
+
+    .ak-counter2-bg-dots-shape {
+        position: absolute;
+        top: 29px;
+        left: 49%;
+        animation-name: ak-bg-img-move-x;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        @media #{$xs} {
+            display: none;
+        }
+    }
+
+    .ak-counter2-bg-bottom-right-shape {
+        position: absolute;
+        bottom: -40px;
+        inset-inline-end: -23px;
+
+        @include rtl {
+            inset-inline-start: -23px;
+        }
+    }
+}
+
+.ak-counter2-content-wrapper {
+    position: relative;
+    z-index: 2;
+    padding: 57px 0px 60px 0px;
+}
+
+.ak-counter2-item {
+    display: flex;
+    justify-content: center;
+
+    @media #{$md} {
+        margin-bottom: 30px;
+    }
+
+    .ak-counter2-number-wrapper {
+        display: flex;
+
+        .ak-counter2-number-inner {
+            color: var(--clr-text-8);
+            font-size: 96px;
+            font-weight: var(--bd-fw-bold);
+            line-height: 1;
+
+            @media #{$lg,$xs} {
+                font-size: 76px;
+            }
+
+            @media #{$md} {
+                font-size: 86px;
+            }
+
+            @media #{$xxs} {
+                font-size: 66px;
+            }
+        }
+
+        .count-text {
+            font-size: 70px;
+
+            @media #{$lg,$xs} {
+                font-size: 56px;
+            }
+
+            @media #{$md} {
+                font-size: 66px;
+            }
+
+            @media #{$xxs} {
+                font-size: 48px;
+            }
+        }
+
+        .ak-counter2-plus {
+            color: var(--clr-theme-1);
+            font-size: 36px;
+            position: relative;
+            top: 20px;
+
+            @media #{$md} {
+                top: 15px;
+            }
+
+            @media #{$xxs} {
+                top: 10px;
+            }
+        }
+    }
+
+    .counter-text {
+        p {
+            font-weight: var(--bd-fw-medium);
+            color: var(--clr-text-10);
+            margin-bottom: 0px;
+            margin-top: 25px;
+            line-height: 24px;
+
+            @media #{$xs} {
+                margin-top: 22px;
+            }
+        }
+    }
+}
+
+
+// Counter-3 area start
+
+
+.ak-counter3-bg1 {
+    background: var(--clr-bg-9);
+    overflow: hidden;
+}
+
+.ak-counter3-bg1-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, .8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.ak-counter3-bg-round-wrapper {
+    .ak-counter3-bg-round-1 {
+        width: 491px;
+        height: 382px;
+        background: #D4212F;
+        filter: blur(250px);
+        position: absolute;
+        top: 0px;
+        left: 126px;
+    }
+
+    .ak-counter3-bg-round-2 {
+        width: 683px;
+        height: 230px;
+        background: #D4212F;
+        filter: blur(250px);
+        position: absolute;
+        top: -100px;
+        inset-inline-end: 88px;
+
+        @media #{$xxs} {
+            top: 500px;
+            inset-inline-end: 28px;
+        }
+    }
+
+    &::after {
+        width: 100%;
+        height: 100%;
+        background: rgba(13, 13, 13, .7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+    }
+}
+
+.bd-ud-counter-item-wrapper {
+    padding: 65px 0px 55px 0px;
+    position: relative;
+    z-index: 1;
+}
+
+.counter_item {
+    display: flex;
+    align-items: center;
+    padding-inline-start: 28px;
+    padding-inline-end: 28px;
+    position: relative;
+
+    @media #{$lg} {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    @media #{$md,$sm,$xs,$xxs} {
+        flex-direction: column;
+        text-align: center;
+        margin: 35px 0px;
+    }
+
+    &::before {
+        width: 1px;
+        height: 100%;
+        background: rgba(255, 255, 255, .1);
+        position: absolute;
+        top: 0;
+        inset-inline-end: -12px;
+        content: "";
+
+        @media #{$md,$sm,$xs,$xxs} {
+            display: none;
+        }
+    }
+
+    .counter {
+        &_canvas {
+            position: relative;
+
+            canvas {
+                @include transform(rotate(110deg));
+
+                @media #{$xs} {
+                    width: 120px;
+                    height: 120px;
+                }
+
+                @media #{$xxs} {
+                    width: 100px;
+                    height: 100px;
+                }
+            }
+        }
+
+        &_percentage {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            font-size: 36px;
+            color: var(--clr-common-white);
+            font-weight: var(--bd-fw-bold);
+            line-height: 70px;
+            @include transform(translate(-50%, -55%));
+
+            @media #{$xs} {
+                font-size: 30px;
+            }
+
+            @media #{$xxs} {
+                font-size: 25px;
+            }
+        }
+    }
+
+    .bd-ud-counter-title {
+        color: var(--clr-text-10);
+        margin-inline-start: 20px;
+        margin-bottom: 0px;
+
+        @media #{$md,$sm,$xs,$xxs} {
+            margin-top: 20px;
+        }
+
+        @media #{$xs,$xxs} {
+            margin-top: 15px;
+        }
+    }
+
+    &:last-child {
+        .counter_canvas {
+            canvas {
+                @include transform(rotate(180deg));
+            }
+        }
+    }
+}
+
+.counter_item .counter_canvas {
+    text-align: center;
+}
+
+.row {
+    & [class*="col-"] {
+        &:last-child {
+            .counter_item {
+                &::before {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// Counter-4 area start
+
+.ak-counter4-bg {
+    background: var(--clr-bg-5);
+    position: relative;
+
+    .ak-counter4-bg-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        mix-blend-mode: multiply;
+        opacity: 0.8;
+
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.ak-counter4-content-wrapper {
+    padding: 55px 0px 59px 0px;
+    @media #{$sm,$xs,$xxs}{
+        padding: 45px 0px 29px 0px;
+    }
+}
+
+.ak-counter4-item {
+    .ak-counter2-number-wrapper {
+        .ak-counter2-number-inner {
+            font-size: 96px;
+            color: var(--clr-text-8);
+            line-height: 1;
+
+            @media #{$lg,md} {
+                font-size: 86px;
+            }
+
+            @media #{$sm,$xs} {
+                font-size: 76px;
+                margin-bottom: 30px;
+
+                .count-text {
+                    font-size: 59px;
+                }
+            }
+
+            @media #{$xxs} {
+                font-size: 66px;
+                margin-bottom: 30px;
+
+                .count-text {
+                    font-size: 50px;
+                }
+            }
+
+        }
+
+        .ak-counter2-plus {
+            color: var(--clr-common-white);
+            top: 15px;
+
+            @media #{$lg,$md} {
+                top: 25px;
+            }
+
+            @media #{$sm,$xs} {
+                top: 15px;
+            }
+        }
+    }
+
+    .counter-text {
+        p {
+            color: var(--clr-common-white);
+
+            @media #{$md} {
+                margin-top: 35px
+            }
+
+            @media #{$sm,$xs} {
+                margin-top: 23px
+            }
+
+            @media #{$xxs} {
+                margin-top: 17px
+            }
+        }
+    }
+}
+
+.counter4-border {
+    position: relative;
+
+    &::after {
+        width: 1px;
+        height: 55px;
+        background: rgba(255, 255, 255, .5);
+        position: absolute;
+        top: 50%;
+        inset-inline-start: 0;
+        content: "";
+        transform: translateY(-50%);
+
+        @media #{$md,$sm,$xs,$xxs} {
+            display: none;
+        }
+    }
+
+    &::before {
+        width: 1px;
+        height: 55px;
+        background: rgba(255, 255, 255, .5);
+        position: absolute;
+        top: 50%;
+        inset-inline-end: 0;
+        content: "";
+        transform: translateY(-50%);
+
+        @media #{$md,$sm,$xs,$xxs} {
+            display: none;
+        }
+    }
+}
+
+.ak-counter4-left-shape {
+    position: absolute;
+    top: 0;
+    inset-inline-start: 5%;
+    opacity: .3;
+    animation-name: ak-bg-img-move-x;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+.ak-counter4-middle-shape {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: .3;
+
+    @include rtl {
+        @media #{$xl} {
+            inset-inline-start: -90px;
+            left: auto;
+        }
+
+        @media #{$lg,$md,$sm,$xs,$xxs} {
+            display: none;
+        }
+    }
+
+    @media #{$xl,$lg} {
+        left: 150px;
+    }
+
+    @media #{$md,$sm} {
+        left: 33px;
+    }
+
+    @media #{$xs,$xxs} {
+        display: none;
+    }
+
+    img {
+        animation-name: ak-bg-img-move-x;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}
+
+.ak-counter4-right-shape {
+    position: absolute;
+    bottom: 0px;
+    inset-inline-end: 50px;
+    opacity: .3;
+
+    @media #{$xl,$lg} {
+        display: flex;
+        justify-content: flex-end;
+
+        img {
+            width: 80%;
+        }
+    }
+
+    @media #{$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+
+    img {
+        animation-name: ak-bg-img-move-x;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+}

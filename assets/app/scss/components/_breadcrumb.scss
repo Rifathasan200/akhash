@@ -1,0 +1,314 @@
+@use '../utils' as *;
+
+/*------------------------------
+07. breadcrumb css
+------------------------------*/
+
+// Breadcrumb style
+
+.page-title-area {
+    @media #{$lg} {
+        padding-bottom: 120px;
+    }
+    @media #{$md} {
+        padding-bottom: 130px;
+    }
+    @media #{$sm,$xs,$xxs} {
+        padding-bottom: 100px;
+    }
+    &.is-bottom {
+        padding-bottom: 280px;
+
+        @media #{$lg} {
+            padding-bottom: 205px;
+        }
+
+        @media #{$md} {
+            padding-bottom: 0px;
+        }
+
+        @media #{$sm,$xs,$xxs} {
+            padding-bottom: 0px;
+        }
+    }
+}
+
+.page-title-area-bg {
+    background: var(--clr-bg-9);
+}
+
+.page-title-bg-overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(13, 13, 13, 0.8);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.page-title-round-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+
+    &::after {
+        width: 100%;
+        height: 100%;
+        background: rgba(13, 13, 13, 0.7);
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+    }
+
+    .page-title-round-left {
+        width: 491px;
+        height: 643.01px;
+        background: #D4212F;
+        filter: blur(250px);
+        position: absolute;
+        bottom: -80px;
+        left: 100px;
+        opacity: .5;
+    }
+
+    .page-title-round-right {
+        width: 321px;
+        height: 349px;
+        background: #D4212F;
+        filter: blur(250px);
+        opacity: .5;
+        position: absolute;
+        bottom: 37%;
+        inset-inline-end: 12%;
+    }
+}
+
+.page-title-2 {
+    .page-title-round-wrapper {
+        &::after {
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 13, 13, 0.5);
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+        }
+
+        .page-title-round-left {
+            width: 491px;
+            height: 680px;
+            opacity: .4;
+        }
+
+        .page-title-round-right {
+            width: 600px;
+            height: 552px;
+            opacity: .4;
+            top: -36%;
+            inset-inline-end: 5%;
+        }
+    }
+}
+
+.page-sub-title {
+    display: inline-block;
+    padding: 5px 11px;
+    color: var(--clr-text-9);
+    background: var(--clr-common-white);
+    border-radius: 16px;
+    font-weight: var(--bd-fw-medium);
+}
+
+.page-title {
+    font-size: 64px;
+    font-weight: var(--bd-fw-bold);
+    color: var(--clr-common-white);
+    line-height: 1.2;
+
+    @media #{$xl} {
+        font-size: 55px;
+    }
+
+    @media #{$lg} {
+        font-size: 56px;
+
+        br {
+            display: none;
+        }
+    }
+
+    @media #{$md} {
+        font-size: 60px;
+
+        br {
+            display: none;
+        }
+    }
+
+    @media #{$sm} {
+        font-size: 40px;
+
+        br {
+            display: none;
+        }
+    }
+
+    @media #{$xs,$xxs} {
+        font-size: 34px;
+
+        br {
+            display: none;
+        }
+    }
+}
+
+.page-title-content {
+    position: relative;
+    z-index: 1;
+
+    .page-title-wrapper {
+        padding-top: 130px;
+        padding-bottom: 130px;
+        @media #{$sm,$xs,$xxs}{
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
+
+        span {
+            color: var(--clr-text-10);
+        }
+
+        .social-icon {
+            ul {
+                display: flex;
+                gap: 0 10px;
+
+                li {
+                    list-style: none;
+
+                    a {
+                        width: 30px;
+                        height: 30px;
+                        border: 1px solid rgba(255, 255, 255, 0.1);
+                        border-radius: 50%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        transition: .4s;
+
+                        i {
+                            color: var(--clr-common-white);
+                            font-size: 15px;
+                        }
+
+                        &:hover {
+                            background: var(--clr-bg-5);
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
+
+.page-title-img {
+    position: absolute;
+    top: 65px;
+    inset-inline-end: 0;
+    max-width: 538px;
+
+    @media #{$lg} {
+        max-width: 438px;
+    }
+
+    @media #{$md,$sm,$xs,$xxs} {
+        max-width: 100%;
+        position: inherit;
+        margin-top: 0px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.page-title-meta {
+    .ak-blog-meta-wrap {
+        background: transparent;
+        transform: translateY(0px);
+        justify-content: center;
+        .ak-blog-author-icon {
+            i {
+                color: var(--clr-text-10);
+            }
+        }
+
+        .ak-blog-author-text {
+            color: var(--clr-text-10);
+        }
+
+        .ak-news-meta-box {
+            .ak-news-meta-icon {
+                path {
+                    fill: var(--clr-text-10);
+                }
+            }
+
+            .ak-news-meta-text {
+                color: var(--clr-text-10);
+            }
+        }
+
+    }
+}
+
+//  team-details banner area start
+
+
+.page-title-team-details {
+    .page-title-img {
+        width: 538px;
+        height: 538px;
+        border-radius: 50%;
+        background: var(--clr-common-white);
+        overflow: hidden;
+
+        @media #{$lg,$md,$sm,$xs,$xxs} {
+            width: 438px;
+            height: 438px;
+        }
+
+        @media #{$xs} {
+            width: 400px;
+            height: 400px;
+        }
+
+        @media #{$xxs} {
+            width: 290px;
+            height: 290px;
+        }
+
+        &::after {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(180deg, rgba(33, 190, 212, .2) 0%, rgba(33, 190, 212, 0) 100%);
+            border-radius: 50%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            content: "";
+
+            @media #{$md,$sm,$xs,$xxs} {
+                display: none;
+            }
+        }
+    }
+}
+
+//  team-details banner area end

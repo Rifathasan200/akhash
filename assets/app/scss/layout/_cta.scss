@@ -1,0 +1,355 @@
+/*------------------------------
+28. cta css
+------------------------------*/
+@use "../utils" as *;
+
+
+.cta-area-top {
+    position: relative;
+    margin-top: -107px;
+    z-index: 3;
+
+    @media #{$xl} {
+        margin-top: 0px;
+    }
+
+    @media #{$lg,$md} {
+        margin-top: 0px;
+        padding-top: 130px;
+    }
+    @media #{$sm,$xs,$xxs} {
+        margin-top: -60px;
+        padding-top: 130px;
+    }
+    
+}
+
+.ak-cta-bg {
+    position: relative;
+    overflow: hidden;
+    background: var(--clr-bg-9);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    .ak-cta-bg-top-left-shape {
+        position: absolute;
+        top: -22px;
+        left: -23px;
+    }
+
+    .ak-cta-bg-dots-shape {
+        position: absolute;
+        top: 29px;
+        left: 49%;
+        animation-name: ak-bg-img-move-x;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        @media #{$xxs} {
+            top: 67px;
+        }
+    }
+
+    .ak-cta-bg-bottom-right-shape {
+        position: absolute;
+        bottom: -40px;
+        inset-inline-end: -23px;
+
+        @include rtl {
+            inset-inline-start: 0px;
+        }
+    }
+}
+
+.ak-cta-bg-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, .6);
+}
+
+.ak-cta-content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 64px;
+
+    @media #{$sm,$xs} {
+        padding: 30px;
+        padding-bottom: 45px;
+    }
+
+    @media #{$xxs} {
+        padding: 27px;
+    }
+}
+
+.ak-cta-details {
+    p {
+        color: var(--clr-text-10);
+        margin-bottom: 0px;
+    }
+}
+
+.ak-cta-heading {
+    font-size: 40px;
+    line-height: 1;
+    font-weight: var(--bd-fw-bold);
+    color: var(--clr-common-white);
+    margin-bottom: 20px;
+
+    @media #{$lg,$md} {
+        font-size: 39px;
+    }
+
+    @media #{$sm} {
+        font-size: 38px;
+        line-height: 1.2;
+    }
+
+    @media #{$xs} {
+        line-height: 1.2;
+        font-size: 27px;
+    }
+
+    @media #{$xxs} {
+        line-height: 1.2;
+        font-size: 25px;
+    }
+}
+
+.ak-cta-seach-box {
+    @media #{$md,$sm,$xs,$xxs} {
+        margin-top: 30px;
+    }
+
+    .ak-cta-form {
+        display: flex;
+        padding: 17px 15px 19px 15px;
+        border: 1px solid rgba(255, 255, 255, .2);
+        border-inline-end: none;
+
+        .ak-cta-form-icon {
+            margin-inline-end: 10px;
+
+            i {
+                color: var(--clr-theme-1);
+            }
+        }
+
+        input {
+            background: transparent;
+            border: none;
+            color: var(--clr-text-10);
+            width: 85%;
+
+            &::placeholder {
+                font-size: 16px;
+                font-weight: var(--bd-fw-medium);
+                color: var(--clr-text-10);
+            }
+        }
+
+        .ak-cta-search-btn {
+            width: 64px;
+            height: 64px;
+            background: var(--clr-bg-5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: -1px;
+            inset-inline-end: 0;
+            transition: .3s;
+            i {
+                font-size: 20px;
+                color: var(--clr-common-white);
+                transition: .3s;
+            }
+            &:hover{
+                background: var(--clr-common-white);
+                i{
+                    color: var(--clr-text-9);
+                }
+            }
+        }
+    }
+}
+
+
+//  CTA  CSS END
+
+// CTA-2  CSS start
+
+.ak-cta2-bg {
+    background: rgba(20, 20, 20, .8);
+}
+
+.ak-cta2-bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: multiply;
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        @media #{$xxs} {
+            object-fit: cover;
+        }
+    }
+}
+
+.ak-cta2-button {
+    display: flex;
+    justify-content: flex-end;
+
+    @media #{$md,$sm,$xs,$xxs} {
+        margin-top: 30px;
+        justify-content: flex-start;
+    }
+}
+
+.ak-cta2-top-shape {
+    position: absolute;
+    top: 0;
+    left: 47%;
+    animation-name: ak-bg-img-move-x;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media #{$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+.ak-cta2-bottom-shape {
+    position: absolute;
+    bottom: 2px;
+    inset-inline-end: 38px;
+    animation-name: ak-bg-img-move-x;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media #{$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+//  CTA-2  CSS end
+
+// CTA-3  CSS start
+
+.ak-cta3-area-top {
+    position: relative;
+    margin-top: -120px;
+    z-index: 3;
+
+    @media #{$xxs} {
+        margin-top: -74px;
+    }
+}
+
+.ak-cta3-bg {
+    background: var(--clr-bg-5);
+
+    &::after {
+        width: 100%;
+        height: 164px;
+        background: linear-gradient(180deg, #C51F2C 0%, rgba(197, 31, 44, 0) 100%);
+        mix-blend-mode: normal;
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "";
+    }
+}
+
+.ak-cta3-bg-img {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    mix-blend-mode: overlay;
+
+    img {
+        width: 100%;
+        height: 100%;
+
+        @media #{$sm,$xs,$xxs} {
+            object-fit: cover;
+        }
+    }
+}
+
+.ak-cta3-bg-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(212, 33, 47, .2);
+}
+
+.btn-bg-black {
+    background: var(--clr-bg-9);
+}
+
+.ak-cta3-content-wrapper {
+    position: relative;
+    z-index: 1;
+    padding: 70px 65px;
+
+    @media #{$sm} {
+        padding: 45px 40px;
+    }
+
+    @media #{$xs} {
+        padding: 30px;
+    }
+
+    @media #{$xxs} {
+        padding: 27px;
+    }
+}
+
+.ak-cta3-details {
+    p {
+        color: var(--clr-text-8);
+        margin-bottom: 0px;
+
+        @media #{$lg,$md,$sm,$xs,$xxs} {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// CTA-3  CSS end
+
+
+// Inner CTA  CSS start
+
+//  service cta start
+
+.inner-cta-area-top {
+    position: relative;
+    top: 100px;
+    z-index: 3;
+    @media #{$sm,$xs,$xxs}{
+        top: 40px;
+    }
+}
+
+// service cta end

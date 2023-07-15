@@ -1,0 +1,46 @@
+/*------------------------------
+26. confused css
+------------------------------*/
+@use "../utils" as *;
+
+
+.confused-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    filter: grayscale(1);
+
+    &:after {
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: #141414;
+        opacity: 0.7;
+        mix-blend-mode: multiply;
+    }
+}
+
+.confused-content {
+    position: relative;
+    z-index: 55;
+
+    .main-title {
+        color: var(--clr-common-white);
+    }
+
+    p {
+        color: var(--clr-text-8);
+        margin-top: 30px;
+
+        @media #{$xxs,$xs,$sm} {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+
+// Confused area end

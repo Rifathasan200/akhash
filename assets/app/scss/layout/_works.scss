@@ -1,0 +1,113 @@
+/*------------------------------
+40. works css
+------------------------------*/
+@use "../utils" as *;
+
+
+
+.inner-works-area {
+    @media #{$md} {
+        padding-top: 130px;
+    }
+    @media #{$sm,$xs,$xxs} {
+        padding-top: 70px;
+    }
+}
+
+.works-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 124px;
+
+    @media #{$lg} {
+        gap: 30px 30px;
+    }
+
+    @media #{$md} {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px 30px;
+    }
+
+    @media #{$sm,$xs,$xxs} {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 30px 0px;
+    }
+}
+
+.works-item {
+    padding: 30px 30px 15px 30px;
+    background: var(--clr-common-white);
+    border: 1px solid rgba(20, 20, 20, 0.1);
+    position: relative;
+
+    h4 {
+        margin-bottom: 25px;
+
+        a {
+            font-size: 22px;
+            font-weight: var(--bd-fw-bold);
+            color: var(--clr-text-9);
+            line-height: 1.3;
+            transition: .3s;
+        }
+
+        &:hover {
+            a {
+                color: var(--clr-theme-1);
+            }
+        }
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 28px;
+        color: var(--clr-text-5);
+    }
+
+    .inner-works-item-icon {
+        transition: .4s;
+        margin-bottom: 35px;
+    }
+
+    &:hover {
+        .inner-works-item-icon {
+            transform: translateY(-10px);
+        }
+    }
+}
+
+.work-icon-shape {
+    position: absolute;
+    bottom: 40%;
+    inset-inline-end: -38px;
+    transform: translate(50%);
+
+    @include rtl {
+        inset-inline-end: -80px;
+        transform: rotateY(180deg);
+    }
+
+    @media #{$lg,$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+
+    img {
+        animation: iconltr 1.5s infinite;
+
+
+    }
+}
+
+.works-map-img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media #{$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+//  OFFER  CSS end

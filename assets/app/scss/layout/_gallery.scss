@@ -1,0 +1,143 @@
+/*------------------------------
+42. gallery css
+------------------------------*/
+@use "../utils" as *;
+
+
+.gallery-grid-area {
+    &.is-bottom {
+        padding-bottom: 235px;
+        @media #{$sm,$xs,$xxs}{
+            padding-bottom: 165px;
+        }
+    }
+}
+
+.gallery-grid-menu-wrapper {
+    .ak-movies-menu {
+        justify-content: center;
+    }
+}
+
+.gallery-grid-img {
+    position: relative;
+    overflow: hidden;
+
+    img {
+        width: 100%;
+        transition: .5s;
+    }
+
+    &::before {
+        width: 100%;
+        height: 100%;
+        background: rgba(20, 20, 20, .3);
+        position: absolute;
+        top: 0;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        content: "";
+        transition: .5s;
+    }
+
+    .popup-image {
+        width: 124px;
+        height: 124px;
+        background: var(--clr-gradient-1);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0);
+
+        @media #{$xs,$xxs} {
+            width: 80px;
+            height: 80px;
+        }
+
+        i {
+            font-size: 48px;
+            color: var(--clr-common-white);
+
+            @media #{$xs,$xxs} {
+                font-size: 35px;
+            }
+        }
+    }
+
+    &:hover {
+        img {
+            transform: scale(1.02);
+        }
+
+        &::before {
+            opacity: 1;
+            visibility: visible;
+            z-index: 1;
+        }
+
+        .popup-image {
+            transform: translate(-50%, -50%) scale(1);
+            z-index: 1;
+        }
+    }
+}
+
+//   Gallery grid  CSS end
+
+//   Gallery grid-3  CSS start
+
+.gallery-grid-3-img {
+    .popup-image {
+        width: 90px;
+        height: 90px;
+
+        @media #{$md} {
+            width: 124px;
+            height: 124px;
+        }
+
+        @media #{$xs,$xxs} {
+            width: 80px;
+            height: 80px;
+        }
+
+        i {
+            font-size: 38px;
+
+            @media #{$xs,$xxs} {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+//   Gallery grid-3  CSS end
+
+//   Gallery grid-4  CSS start
+
+.gallery-grid-4-img {
+    .popup-image {
+        width: 86px;
+        height: 86px;
+
+        @media #{$xs,$xxs} {
+            width: 80px;
+            height: 80px;
+        }
+
+        i {
+            font-size: 38px;
+
+            @media #{$xs,$xxs} {
+                font-size: 35px;
+            }
+        }
+    }
+}
+
+//   Gallery grid-4  CSS end

@@ -1,0 +1,247 @@
+/*------------------------------
+30. broadband css
+------------------------------*/
+@use "../utils" as *;
+
+
+.ak-broadband-bg {
+	background: var(--clr-bg-10);
+	position: relative;
+
+	&.is-bottom {
+		padding-bottom: 245px;
+
+		@media #{$md} {
+			padding-bottom: 220px;
+		}
+	}
+}
+
+.ak-broadband-right-shape {
+	position: absolute;
+	top: 50%;
+	inset-inline-end: 0;
+	transform: translateY(-50%);
+	animation-name: ak-bg-img-move-y;
+	animation-duration: 2s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+
+	img {
+		@include rtl {
+			transform: rotate(-180deg);
+		}
+	}
+
+	@media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+		display: none;
+	}
+}
+
+.ak-broadband-accordion-wrapper {
+	#accordionExample {
+		--bs-accordion-bg: transparent;
+	}
+
+	.accordion-button {
+		border-bottom: 1px solid rgba(20, 20, 20, .1);
+		transition: .3s;
+
+		&:hover {
+			border-bottom: 1px solid #141414;
+		}
+	}
+
+	.accordion-collapse {
+		background: var(--clr-common-white);
+	}
+
+	.accordion-button.collapsed {
+		color: var(--clr-text-9);
+		font-weight: var(--bd-fw-bold);
+		font-size: var(--bd-fs-h4);
+		transition: .3s;
+		padding: 24px 30px 23px 30px;
+		position: relative;
+
+		@media #{$xxs} {
+			padding: 24px 15px 23px 15px;
+		}
+
+		&::after {
+			width: 100%;
+			border: 1px solid var(--clr-bg-9);
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			content: "";
+			z-index: 2;
+		}
+
+		.ak-accordion-number {
+			color: var(--clr-theme-1);
+			margin-inline-end: 12px;
+			position: absolute;
+			opacity: 0;
+			visibility: hidden;
+			transition: .3s;
+		}
+
+		.ak-accordion-heading {
+			transition: .3s;
+		}
+
+		&:hover {
+			.ak-accordion-heading {
+				margin-inline-start: 40px;
+			}
+
+			.ak-accordion-number {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.accordion-button::after {
+		display: none;
+	}
+
+	.accordion-button:not(.collapsed)::after {
+		display: none;
+	}
+
+	.accordion-item:first-of-type .accordion-button {
+		border-radius: 0px;
+		color: var(--clr-text-9);
+		font-weight: 700;
+		font-size: 20px;
+
+		.ak-accordion-number {
+			color: var(--clr-theme-1);
+			margin-inline-end: 12px;
+		}
+
+		&:hover {
+			.ak-accordion-number {
+				opacity: 1;
+				visibility: visible;
+			}
+		}
+	}
+
+	.accordion-item:first-of-type {
+		border: 0px;
+	}
+
+	.accordion-button:focus {
+		z-index: 3;
+		border-color: transparent;
+		outline: 0;
+		box-shadow: none;
+	}
+
+	.accordion-button:not(.collapsed) {
+		color: var(--clr-text-9);
+		box-shadow: none;
+		border-bottom: none;
+		font-size: 20px;
+		font-weight: var(--bd-fw-bold);
+		padding: 35px 0px 0px 30px;
+		background: var(--clr-common-white);
+
+		.ak-accordion-number {
+			color: var(--clr-theme-1);
+			margin-inline-end: 12px;
+		}
+
+		@include rtl {
+			padding-inline-start: 30px;
+		}
+	}
+
+	.accordion-item {
+		color: var(--bs-accordion-color);
+		background-color: var(--bs-accordion-bg);
+		border: transparent;
+	}
+
+	.accordion-item:last-of-type .accordion-button.collapsed {
+		border-radius: 0px;
+	}
+
+	.ak-accordion-bofy-button {
+		position: relative;
+		z-index: 3;
+	}
+
+	.accordion-body {
+		position: relative;
+		padding: 25px 10px 25px 25px;
+
+		@include rtl {
+			padding-inline-start: 25px;
+		}
+
+		.ak-accourdion-body-shape {
+			position: absolute;
+			bottom: -8px;
+			inset-inline-end: -4px;
+
+			@media #{$xs,$xxs} {
+				display: none;
+			}
+		}
+
+		.ak-accordion-body-content {
+			position: relative;
+			z-index: 1;
+		}
+	}
+
+}
+
+.ak-broadband-img-wrapper {
+	position: relative;
+
+	@media #{$md,$sm,$xs,$xxs} {
+		margin-top: 60px;
+	}
+
+	img {
+		width: 100%;
+		position: relative;
+		z-index: 1;
+	}
+
+	&::after {
+		width: 100%;
+		height: 100%;
+		background: var(--clr-gradient-1);
+		position: absolute;
+		top: 10px;
+		left: 10px;
+		content: "";
+	}
+}
+
+// BROADBAND  CSS END
+
+// Inner BROADBAND  CSS START
+
+.ak-broadband-area {
+	&.is-top {
+		padding-top: 220px;
+		@media #{$sm,$xs,$xxs}{
+			padding-top: 110px !important;
+		}
+	}
+}
+
+.experience-accordion-wrap {
+	.accordion-body {
+		padding: 35px 25px 15px 25px;
+	}
+}
+
+// Inner BROADBAND  CSS END

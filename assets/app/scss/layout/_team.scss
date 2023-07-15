@@ -1,0 +1,401 @@
+/*------------------------------
+39. team css
+------------------------------*/
+@use "../utils" as *;
+
+
+.team-left-shape {
+    position: absolute;
+    bottom: 130px;
+    inset-inline-start: 0;
+    animation-name: ak-bg-img-move-y;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @include rtl {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+.team-right-shape {
+    position: absolute;
+    top: 320px;
+    inset-inline-end: 50px;
+    animation: rotate 15s linear infinite;
+
+    @media #{$xxxl} {
+        inset-inline-end: -30px;
+        animation-name: ak-bg-img-move-y;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+    }
+
+    @media #{$xxl,$xl,$lg,$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+.team-item-main-wrapper{
+    @media #{$sm,$xs,$xxs}{
+        margin-top: 60px;
+    }
+}
+.ak-team-item {
+    text-align: center;
+    padding: 40px 40px 35px 40px;
+    border: 1px solid rgba(20, 20, 20, .2);
+
+    .item-name {
+        font-size: 24px;
+        font-weight: var(--bd-fw-bold);
+        color: var(--clr-text-9);
+        transition: .3s;
+
+        @media #{$xxs} {
+            font-size: 22px;
+        }
+
+        &:hover {
+            color: var(--clr-theme-1);
+        }
+    }
+
+    span {
+        color: var(--clr-text-11);
+        display: block;
+    }
+
+    .team-img-round {
+        img {
+            transition: .4s;
+        }
+    }
+
+    &:hover {
+        .team-img-round {
+            img {
+                transform: scale(1.1);
+            }
+        }
+    }
+}
+
+.team-img-round {
+    max-width: 184px;
+    background: linear-gradient(180deg, rgb(212, 33, 47, .2) 0%, rgba(212, 33, 47, 0) 100%);
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    transition: .3s;
+
+    @media #{$xxs} {
+        max-width: 154px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+.team-round-bg {
+    div:nth-child(2) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgba(33, 126, 212, .2) 0%, rgba(33, 126, 212, 0) 100%);
+            }
+        }
+    }
+
+    div:nth-child(3) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgba(212, 194, 33, .2) 0%, rgba(212, 194, 33, 0) 100%);
+            }
+        }
+    }
+
+    div:nth-child(4) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgba(212, 76, 33, .2) 0%, rgba(212, 76, 33, 0) 100%);
+            }
+        }
+    }
+
+    div:nth-child(5) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgba(33, 212, 40, .2) 0%, rgba(33, 212, 40, 0) 100%);
+            }
+        }
+    }
+
+    div:nth-child(6) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgb(187, 33, 212, .2) 0%, rgba(187, 33, 212, 0) 100%);
+            }
+        }
+    }
+
+    div:nth-child(7) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgba(165, 212, 33, .2) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+    }
+
+    div:nth-child(8) {
+        .ak-team-item {
+            .team-img-round {
+                background: linear-gradient(180deg, rgba(33, 190, 212, .2) 0%, rgba(255, 255, 255, 0) 100%);
+            }
+        }
+    }
+}
+
+// Team area end
+
+// Inner Team area start
+
+.ak-team-area {
+    &.is-top {
+        padding-top: 190px;
+
+        @media #{$lg,$md} {
+            padding-top: 130px;
+        }
+        @media #{$sm,$xs,$xxs} {
+            padding-top: 70px;
+        }
+    }
+
+    &.is-bottom {
+        padding-bottom: 205px;
+        @media #{$sm,$xs,$xxs}{
+            padding-bottom: 135px;
+        }
+    }
+}
+
+.ak-team2-item-wrapper {
+    .ak-team-item {
+        position: relative;
+        transition: .3s;
+
+        &:hover {
+            border-color: transparent;
+
+            .team-item-overlay {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.team-item-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all .3s ease-out 0s;
+    background-color: var(--clr-bg-9);
+    visibility: hidden;
+    opacity: 0;
+    padding: 35px 40px 35px 40px;
+    text-align: left;
+
+    .team-item-overlay-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+
+        img {
+            mix-blend-mode: luminosity;
+            opacity: .1;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.team-item-overlay-content {
+    position: relative;
+    z-index: 1;
+
+    h3 {
+        font-size: 26px;
+        font-weight: var(--bd-fw-bold);
+        color: var(--clr-common-white);
+        line-height: 1.4;
+        margin-bottom: 25px;
+
+        @media #{$lg} {
+            font-size: 23px;
+            margin-bottom: 20px;
+        }
+
+        @media #{$md} {
+            margin-bottom: 15px;
+        }
+
+        @media #{$xxs} {
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+    }
+
+    p {
+        font-size: 16px;
+        color: var(--clr-text-10);
+        margin-bottom: 40px;
+
+        @media #{$lg,$md} {
+            margin-bottom: 30px;
+        }
+
+        @media #{$xxs} {
+            margin-bottom: 20px;
+        }
+    }
+}
+
+// Inner Team area end
+
+// Team-Details experience start
+
+.team-form-wrapper {
+    .ak-contact-form-wrapper {
+        @media #{$md,$sm,$xs,$xxs} {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.experience-bg {
+    background: var(--clr-bg-10);
+}
+
+.expericene-accordion-wrapper {
+    .accordion-button:not(.collapsed) {
+        background: transparent;
+        border: 1px solid rgba(20, 20, 20, .1);
+        border-bottom: 0px;
+    }
+
+    .accordion-collapse {
+        background: transparent;
+        border: 1px solid rgba(20, 20, 20, .1);
+        border-top: 0px;
+        border-bottom-left-radius: 0px !important;
+        border-bottom-right-radius: 0px !important;
+    }
+}
+
+.team-details-left-shape {
+    position: absolute;
+    top: 30px;
+    inset-inline-start: 0;
+    animation-name: ak-bg-img-move-y;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @include rtl {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media #{$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+.team-details-right-shape {
+    position: absolute;
+    bottom: 30px;
+    inset-inline-end: 0;
+    animation-name: ak-bg-img-move-y;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @include rtl {
+        img {
+            transform: rotate(180deg);
+        }
+    }
+
+    @media #{$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+.experience-accordion-wrap {
+    @media #{$md,$sm,$xs,$xxs} {
+        margin-bottom: 60px;
+    }
+}
+
+.ak-accordion-heading {
+    @media #{$xxs} {
+        font-size: 18px;
+    }
+}
+
+// Team-Details experience end
+
+// Team-Member area start
+
+.team-member-area {
+    &.is-bottom {
+        padding-bottom: 225px;
+        @media #{$sm,$xs,$xxs}{
+            padding-bottom: 165px;
+        }
+    }
+}
+
+.team-member-active {
+    .swiper-slide-active {
+        .ak-team-item {
+            .item-name {
+                color: var(--clr-theme-1);
+            }
+        }
+    }
+}
+
+.team-member-slider-dot {
+    text-align: center;
+    margin-top: 15px;
+
+    .swiper-pagination-bullet-active {
+        background: var(--clr-bg-4) !important;
+        border: none !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #141414;
+        background: transparent;
+        opacity: 1;
+    }
+}
+
+// Team-Member area end

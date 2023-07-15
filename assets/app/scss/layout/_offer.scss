@@ -1,0 +1,300 @@
+/*------------------------------
+32. offer css
+------------------------------*/
+@use "../utils" as *;
+
+
+
+.ak-offer-bg {
+    width: 100%;
+    background: #141414;
+    position: relative;
+
+    @media #{$sm,$xs} {
+        min-height: 1020px;
+    }
+
+    .ak-offer-bg-overlay-img {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        mix-blend-mode: luminosity;
+        background-attachment: fixed;
+        background-position: top;
+
+        &::after {
+            width: 50%;
+            height: 100%;
+            background: rgb(21, 20, 28, .8);
+            position: absolute;
+            top: 0;
+            inset-inline-start: 0;
+            content: "";
+
+            @media #{$md,$sm,$xs,$xxs} {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.ak-offer-content-wrapper {
+    position: relative;
+    z-index: 1;
+
+    .main-title {
+        color: var(--clr-common-white);
+    }
+
+    p {
+        width: 600px;
+        color: var(--clr-text-15);
+        padding-bottom: 35px;
+        margin-bottom: 0px;
+        position: relative;
+
+        @media #{$xl,$lg,$md,$sm,$xs,$xxs} {
+            width: auto;
+        }
+
+        &::after {
+            width: 100%;
+            border: 1px solid rgba(250, 250, 250, .2);
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            content: "";
+        }
+    }
+
+    .ak-offer-content-price-wrapper {
+        display: flex;
+        padding-top: 30px;
+
+        .ak-offer-content-price-icon {
+            width: 96px;
+            height: 96px;
+            border: 1px solid rgba(250, 250, 250, .2);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media #{$xxs} {
+                width: 76px;
+                height: 76px;
+
+                img {
+                    width: 60%;
+                }
+            }
+        }
+    }
+}
+
+.ak-offer-content-price {
+    display: flex;
+    margin-inline-start: 13px;
+
+    span {
+        font-size: 24px;
+        color: var(--clr-text-10);
+        line-height: 76px;
+
+        @media #{$xxs} {
+            line-height: 56px;
+        }
+    }
+
+    h2 {
+        font-size: 70px;
+        font-weight: var(--bd-fw-bold);
+        color: var(--clr-common-white);
+
+        @media #{$xxs} {
+            font-size: 60px;
+        }
+    }
+
+    .ak-offer-price-point {
+        font-size: 22px;
+        line-height: 1;
+        font-weight: var(--bd-fw-bold);
+        color: var(--clr-common-white);
+        margin-top: 35px;
+        margin-inline-start: 7px;
+
+        @media #{$xxs} {
+            margin-top: 22px;
+        }
+
+        .ak-offer-price-date {
+            font-size: 14px;
+            font-weight: var(--bd-fw-medium);
+            color: var(--clr-text-11);
+            margin-top: 8px;
+            display: block;
+        }
+    }
+}
+
+.ak-offer-img-wrapper {
+    display: flex;
+    justify-content: end;
+    margin-right: -45px;
+
+    @media #{$xl} {
+        margin-right: 0px;
+    }
+
+    @media #{$lg,$md,$sm,$xs,$xxs} {
+        justify-content: center;
+        margin-right: 0px;
+    }
+
+    .ak-offer-img-border {
+        width: 416px;
+        height: 416px;
+        background: rgba(250, 250, 250, 0.24);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+
+        @media #{$lg} {
+            width: 390px;
+            height: 390px;
+        }
+
+        @media #{$xs} {
+            width: 300px;
+            height: 300px;
+        }
+
+        .ak-offer-border-inner-img {
+            width: calc(100% - 100px);
+            height: calc(100% - 100px);
+            border-radius: 50%;
+            overflow: hidden;
+            position: relative;
+
+            &:after {
+                width: 100%;
+                height: 100%;
+                background: rgba(21, 20, 28, .3);
+                position: absolute;
+                content: "";
+                top: 0;
+                left: 0;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    .ak-offer-round-text-img {
+        position: absolute;
+        height: calc(100% - 40px);
+        width: calc(100% - 40px);
+
+        img {
+            width: 100%;
+            animation: rotate-infinite 200s linear infinite reverse;
+        }
+
+    }
+
+    .ak-offer-round-text-img {
+        animation: rotate-infinite 15s linear infinite;
+    }
+
+    .ak-offer-play-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        i {
+            font-size: 60px;
+            color: var(--clr-common-white);
+            transition: .3s;
+            @media #{$md,$sm,$xs,$xxs} {
+                font-size: 40px;
+            }
+
+            @media #{$xxs} {
+                font-size: 30px;
+            }
+        }
+        &:hover{
+            i{
+                color: var(--clr-theme-1);
+            }
+        }
+    }
+}
+
+// OFFER  CSS END
+
+// OFFER-4  CSS start
+
+.ak-offer4-bg {
+    .ak-offer-bg-overlay-img {
+        &::after {
+            width: 40%;
+            height: 100%;
+            background: rgba(21, 20, 28, .8);
+            position: absolute;
+            top: 0;
+            inset-inline-end: 0;
+            content: "";
+            z-index: -1;
+            display: none;
+        }
+
+        &::before {
+            width: 37%;
+            height: 100%;
+            background: rgba(21, 20, 28, .8);
+            position: absolute;
+            top: 0;
+            inset-inline-start: 13%;
+            content: "";
+
+            @media #{$xxxl,$xxl,$xl,$lg} {
+                width: 50%;
+                inset-inline-start: 0px;
+            }
+
+            @media #{$md,$sm,$xs,$xxs} {
+                width: 100%;
+                inset-inline-start: 0px;
+                background: rgba(21, 20, 28, .6);
+            }
+        }
+    }
+}
+
+
+// OFFER-4  CSS END
+
+// Inner-Service-Single-OFFER  CSS Start
+
+.service-offer-content {
+    @media #{$md,$sm,$xs,$xxs} {
+        margin-top: 60px;
+    }
+
+    p {
+        color: var(--clr-text-13);
+        margin-bottom: 30px;
+    }
+}
+
+// Inner-Service-Single-OFFER CSS END

@@ -1,0 +1,409 @@
+/*------------------------------
+24. faq css
+------------------------------*/
+@use "../utils" as *;
+
+
+
+.faq-bg {
+    background: var(--clr-bg-12);
+}
+
+.faq-content-wrapper {
+    @media #{$xs,$sm} {
+        margin-bottom: 80px;
+    }
+    @media #{$md} {
+        margin-bottom: 100px;
+    }
+    @media #{$xs,$sm,$lg} {
+        p {
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+.ak-faq .accordion-button {
+    border: 1px solid var(--clr-bg-9);
+    padding: 15px 28px;
+    padding-inline-end: 8px;
+    justify-content: space-between;
+    text-align: left;
+    background: var(--clr-common-white);
+    font-size: var(--bd-fs-h4);
+    font-weight: var(--bd-fw-sbold);
+    line-height: 1.6;
+    color: var(--clr-text-9);
+
+    @media #{$xs} {
+        padding: 15px 20px;
+    }
+
+    @media #{$lg} {
+        padding: 12px 28px;
+    }
+}
+
+.ak-faq .accordion-button::after {
+    content: "\f067";
+    background-image: none;
+    font-family: "Font Awesome 5 Pro";
+    font-size: 18px;
+    font-weight: 400;
+    height: 40px;
+    width: 40px;
+    line-height: 36px;
+    border-radius: 50%;
+    margin-inline-start: 0;
+    text-align: center;
+    color: var(--clr-theme-1);
+}
+
+.ak-faq .accordion-button:not(.collapsed) {
+    border: 2px solid var(--clr-bg-5);
+    color: var(--clr-text-8);
+    background: var(--clr-bg-5);
+    box-shadow: none;
+
+    @media #{$lg} {
+        padding: 12px 28px;
+    }
+}
+
+.ak-faq {
+    .accordion-button {
+        &:not(.collapsed) {
+            &::after {
+                content: "\f068";
+                color: var(--clr-text-8);
+            }
+        }
+    }
+}
+
+.ak-faq {
+    .accordion-button {
+        &:focus {
+            box-shadow: none;
+        }
+    }
+}
+
+.ak-faq {
+    .accordion-body {
+        font-size: var(--bd-fs-p);
+        line-height: 1.6;
+        color: var(--clr-common-white);
+        background: var(--clr-bg-9);
+        padding: 28px 24px;
+
+        @media #{$lg} {
+            padding: 15px 24px;
+            font-size: 17px;
+        }
+    }
+}
+
+.ak-faq {
+    .accordion-collapse {
+        border: none;
+        transition: all 0.5s;
+    }
+}
+
+.ak-faq {
+    .accordion-item {
+        border: none;
+    }
+}
+
+.ak-faq {
+    .accordion-item {
+        &:first-of-type {
+            .accordion-button {
+                border-radius: 0px;
+            }
+        }
+    }
+}
+
+.ak-faq {
+    .accordion-item {
+        &:last-of-type {
+            .accordion-button.collapsed {
+                border-radius: 0px;
+            }
+        }
+    }
+}
+
+.ak-faq-group {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 0 30px;
+
+    @media #{$xs,$sm,$md} {
+        padding: 0px;
+    }
+}
+
+.faq-area.style-2 {
+    background: var(--clr-theme-3);
+}
+
+.faq-thumb {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 160px;
+    height: 160px;
+    background: var(--clr-common-white);
+    text-align: center;
+    line-height: 160px;
+    border-radius: 550%;
+}
+
+@media (max-width: 450px) {
+    .faq-thumb {
+        transform: translate(-50%, -50%) scale(0.7);
+    }
+}
+
+.faq-accordion-wrapper {
+    position: relative;
+
+    &::after {
+        width: 727px;
+        height: 521px;
+        transform: rotate(-20.93deg);
+        background: var(--clr-bg-5);
+        opacity: 0.1;
+        border-radius: 50%;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        content: "";
+        transform: translateX(-50%) rotate(-20.93deg);
+
+        @media #{$xs} {
+            display: none;
+        }
+
+        @media #{$sm} {
+            width: 541px;
+            height: 390px;
+            top: 15px;
+            transform: translateX(-50%) rotate(-0.93deg);
+        }
+
+        @media #{$md} {
+            top: -15px;
+            transform: translateX(-50%) rotate(-0.93deg);
+        }
+
+        @media #{$lg} {
+            width: 550px;
+            height: 375px;
+            top: 20px;
+            transform: translateX(-50%) rotate(-5.93deg);
+        }
+
+        @media #{$xl} {
+            width: 560px;
+            height: 421px;
+            top: 32px;
+            transform: translateX(-50%) rotate(-9.93deg);
+        }
+
+        @media #{$xxl} {
+            width: 673px;
+            height: 490px;
+            transform: translateX(-50%) rotate(-7.93deg);
+        }
+    }
+}
+
+.ak-faq {
+    position: relative;
+    z-index: 1;
+}
+
+.faq-shape-img {
+    position: absolute;
+    bottom: -95px;
+    inset-inline-start: 0px;
+    animation-name: ak-bg-img-move-x;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media #{$md,$sm,$xs,$xs} {
+        display: none;
+    }
+
+    @media #{$lg} {
+        bottom: -70px;
+        inset-inline-start: 10px;
+    }
+}
+
+// FAQ area end
+
+// Home2 FAQ start
+.ak-faq2-group {
+    padding-inline-start: 0px;
+}
+
+.ak-faq2-content-wrapper {
+    padding-inline-start: 20px;
+
+    @media #{$md,$sm,$xs,$xxs} {
+        margin-top: 0px;
+        padding-inline-start: 0px;
+        margin-bottom: 70px;
+    }
+}
+
+.ak-faq2-right-shape {
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    animation-name: ak-bg-img-move-y;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    img {
+        @include rtl {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @media #{$lg} {
+        bottom: 55px;
+        text-align: right;
+
+        img {
+            width: 70%;
+        }
+    }
+
+    @media #{$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+.faq-padding {
+    padding-bottom: 235px;
+    @media #{$sm,$xs,$xxs}{
+        padding-bottom: 165px;
+    }
+}
+
+.ak-faq4-left-shape {
+    position: absolute;
+    bottom: 145px;
+    inset-inline-start: -84px;
+    animation-name: ak-bg-img-move-y;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media #{$lg,$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+
+    @media #{$xl} {
+        bottom: 101px;
+        inset-inline-start: -108px;
+    }
+}
+
+
+// service-single FAQ start
+
+.service-single-faq-bg {
+    background: var(--clr-bg-10);
+
+    .faq-accordion-wrapper {
+        &::after {
+            display: none;
+        }
+    }
+}
+
+.inner-faq-shape-img {
+    position: absolute;
+    bottom: -120px;
+    inset-inline-end: 95%;
+    animation-name: ak-bg-img-move-x;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    @media #{$lg,$md,$sm,$xs,$xxs} {
+        display: none;
+    }
+}
+
+
+// service-single FAQ end
+
+.inner-faq {
+    &.is-top {
+        padding-top: 195px;
+
+        @media #{$lg,$md} {
+            padding-top: 115px;
+        }
+        @media #{$sm,$xs,$xxs} {
+            padding-top: 70px !important;
+        }
+       
+    }
+
+    .faq-accordion-wrapper {
+        &::after {
+            display: none;
+        }
+
+        .accordion-button {
+            border: 1px solid rgba(20, 20, 20, 0.1);
+
+            &::after {
+                color: var(--clr-text-5);
+            }
+        }
+
+        .accordion-button:not(.collapsed) {
+            &::after {
+                color: var(--clr-common-white);
+            }
+        }
+
+        .ak-faq-group {
+            @media #{$lg,$md,$sm,$xs,$xxs} {
+                padding: 0 0px;
+            }
+        }
+    }
+}
+
+
+// Inner Main FAQ Start
+
+.ak-inner-faq {
+    padding: 0 50px;
+
+    .accordion-body {
+        padding: 45px 24px;
+    }
+}
+
+.accordion-button:not(.collapsed) {
+    pointer-events: none;
+}

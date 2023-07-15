@@ -1,0 +1,364 @@
+@use "../utils" as *;
+
+/*------------------------------
+15. facilities css
+------------------------------*/
+.facilities__area {
+    position: relative;
+    margin-top: -165px;
+}
+
+.facilities-bg {
+    background: var(--clr-bg-1);
+    z-index: 1;
+    padding-top: 290px;
+    @media #{$sm,$xs,$xxs}{
+        padding-top: 240px;
+    }
+}
+
+.facilities-left-bg-shape {
+    width: 483px;
+    height: 598px;
+    background: linear-gradient(180deg, #C51F2C 0%, #FE5C53 100%);
+    filter: blur(300px);
+    position: absolute;
+    bottom: 0;
+    left: 70px;
+    opacity: .1;
+    z-index: -1;
+}
+
+.facilities-right-bg-shape {
+    width: 654px;
+    height: 809px;
+    background: linear-gradient(180deg, #C51F2C 0%, #FE5C53 100%);
+    filter: blur(200px);
+    position: absolute;
+    top: 0;
+    inset-inline-end: 0;
+    opacity: .1;
+    z-index: -1;
+}
+
+.facilities-ring-img {
+    position: absolute;
+    top: 44px;
+    inset-inline-start: 0;
+    animation-name: ak-bg-img-move-y;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    img {
+        @include rtl {
+            transform: rotate(-180deg);
+        }
+    }
+
+    @media #{$lg,$md,$sm,$xs} {
+        display: none;
+    }
+}
+
+.facilities__slider {
+    .slick-center {
+        position: relative;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 1px;
+            background-color: rgb(20, 20, 20, 0.06);
+            height: 100%;
+            top: 0;
+            inset-inline-start: 0;
+
+            @media #{$md,$sm,$xs,$xxs} {
+                display: none;
+            }
+        }
+
+        &::before {
+            position: absolute;
+            content: '';
+            width: 1px;
+            background-color: rgb(20, 20, 20, 0.06);
+            height: 100%;
+            top: 0;
+            inset-inline-end: 0;
+
+            @media #{$lg,$md,$sm,$xs,$xxs} {
+                display: none;
+            }
+
+        }
+
+    }
+}
+
+.facilities {
+    &__icon {
+        margin-bottom: 16px;
+
+        span {
+            width: 104px;
+            height: 104px;
+            background-color: var(--clr-common-white);
+            display: inline-block;
+            text-align: center;
+            line-height: 104px;
+            border-radius: 50%;
+        }
+    }
+
+    &__title {
+        font-weight: var(--bd-fw-bold);
+        line-height: 1;
+        color: var(--clr-text-9);
+        margin-bottom: 28px;
+        transition: .3s;
+
+        a {
+            &:hover {
+                color: var(--clr-theme-1);
+            }
+        }
+    }
+
+    &__content {
+        p {
+            color: var(--clr-text-5);
+            width: 298px;
+            margin: 0 auto;
+
+            @media #{$sm,$xs,$xxs} {
+                width: auto;
+            }
+        }
+    }
+}
+.facilities__icon{
+    img{
+       transition: .2s ease-in-out;
+    }  
+}
+
+.facilities__item{
+    &:hover{
+        .facilities__icon{
+            img{
+               transform: scale(.90);
+            }  
+        }
+    }
+}
+
+
+// Slider start
+
+.facilities__slider {
+    .slick-dots {
+        text-align: center;
+        margin-top: 30px;
+
+        li {
+            list-style: none;
+            display: inline-block;
+            margin: 0 5px;
+
+            button {
+                font-size: 0px;
+                width: 10px;
+                height: 10px;
+                background: var(--clr-bg-7);
+                border-radius: 50%;
+            }
+        }
+
+    }
+
+    .slick-slide img {
+        display: inline-block;
+    }
+}
+
+.facilities__slider {
+    .slick-dots {
+        .slick-active {
+            button {
+                background: var(--clr-bg-5);
+            }
+        }
+    }
+}
+
+// Slider end
+
+// Facilities area end
+
+// Facilities-4 area start
+
+.ak-facilities4-item {
+    border: 1px solid rgba(20, 20, 20, .2);
+    background: var(--clr-common-white);
+    padding: 30px 30px 40px 30px;
+    position: relative;
+    margin-inline-end: 4px;
+    overflow: hidden;
+    transition: .3s;
+    &::after {
+        width: 130px;
+        height: 121px;
+        background: linear-gradient(180deg, #C51F2C 0%, #FE5C53 100%);
+        border-radius: 0px 50px 235.5px;
+        position: absolute;
+        top: -100px;
+        inset-inline-start: -100px;
+        content: "";
+        transition: .3s;
+
+        @include rtl {
+            inset-inline-start: -5px;
+            transform: rotate(90deg);
+        }
+
+        @media #{$xxs} {
+            width: 115px;
+            height: 115px;
+        }
+    }
+
+    &::before {
+        width: 130px;
+        height: 121px;
+        background: #AC0007;
+        border-radius: 0px 50px 235.5px;
+        position: absolute;
+        top: -100px;
+        inset-inline-start: -100px;
+        content: "";
+        transition: .3s;
+
+        @include rtl {
+            transform: rotate(90deg);
+        }
+
+        @media #{$xxs} {
+            width: 115px;
+            height: 115px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+        font-weight: var(--bd-fw-bold);
+        line-height: 1.5;
+        color: var(--clr-text-9);
+        margin-top: 10px;
+    }
+
+    p {
+        color: var(--clr-text-5);
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+
+    &:hover{
+        background: var(--clr-bg-15);
+        border-color: #fff;
+
+        &::after {
+            top: 0;
+            inset-inline-start: 0px;
+        }
+
+        &::before {
+            top: 0;
+            inset-inline-start: 4px;
+        }
+
+        h3 {
+            color: var(--clr-common-white);
+        }
+
+        p {
+            color: var(--clr-text-8);
+        }
+        .ak-facilities4-item-img-wrapper {
+            .img-icon {
+                i {
+                    color: var(--clr-common-white);
+                }
+            }
+
+            .item-number {
+                -webkit-text-stroke: 1px rgba(255, 255, 255, .5);
+            }
+        }
+    }
+}
+
+.ak-facilities4-item-active-img {
+    position: absolute;
+    bottom: 0;
+    inset-inline-end: 0;
+    transition: all 0.6s ease-out 0s;
+
+    @media #{$xxs} {
+        inset-inline-end: -50px;
+    }
+}
+
+.ak-facilities4-content-wrapper {
+    position: relative;
+    z-index: 1;
+}
+
+.ak-facilities4-item-img-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .img-icon {
+        i {
+            font-size: 65px;
+
+            @media #{$xxs} {
+                font-size: 55px;
+            }
+        }
+    }
+
+    .item-number {
+        font-size: 96px;
+        font-weight: var(--bd-fw-bold);
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(20, 20, 20, .1);
+        line-height: 38px;
+
+        @media #{$xxs} {
+            font-size: 76px;
+        }
+    }
+}
+
+.ak-facilities4-slider-dot {
+    text-align: center;
+    margin-top: 60px;
+    line-height: 0px;
+    @media #{$sm,$xs,$xxs}{
+        margin-top: 40px;
+    }
+    .swiper-pagination-bullet-active {
+        background: var(--clr-bg-4) !important;
+        border: none !important;
+    }
+
+    .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+        border: 1px solid #141414;
+        background: transparent;
+        opacity: 1;
+    }
+}

@@ -1,0 +1,98 @@
+/*------------------------------
+41. skills css
+------------------------------*/
+@use "../utils" as *;
+
+
+
+.skills-area {
+    &.is-top {
+        padding-top: 185px;
+
+        @media #{$lg,$md} {
+            padding-top: 130px;
+        }
+        @media #{$sm,$xs,$xxs} {
+            padding-top: 70px;
+        }
+    }
+}
+
+.skills-contact-info {
+    ul {
+        li {
+            list-style: none;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 0px 13px;
+
+            i {
+                width: 55px;
+                height: 55px;
+                border-radius: 50%;
+                background: var(--clr-bg-10);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--clr-theme-1);
+                font-size: 20px;
+            }
+
+            a {
+                font-size: 18px;
+                font-weight: var(--bd-fw-medium);
+                color: var(--clr-text-9);
+                transition: .3s;
+
+                &:hover {
+                    color: var(--clr-theme-1);
+                }
+            }
+
+        }
+    }
+}
+
+.skills-content-area {
+    padding: 40px;
+    border: 1px solid rgba(20, 20, 20, 0.1);
+    @media #{$xxs}{
+        padding: 30px;
+    }
+}
+
+.skills-progress-wrapper {
+    gap: 30px 0px;
+    display: grid;
+}
+
+.skills-single-wrapper {
+    .skill-title {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        align-items: center;
+    }
+
+    .skill-category {
+        font-size: 18px;
+        color: var(--clr-text-9);
+    }
+
+    span {
+        font-size: 18px;
+        color: var(--clr-text-9);
+    }
+
+    .progress {
+        background: var(--clr-bg-20);
+        border-radius: 0px;
+
+        .progress-bar {
+            background: var(--clr-bg-5);
+        }
+    }
+}
+
+// Skills  CSS End

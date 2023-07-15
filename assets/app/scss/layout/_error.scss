@@ -1,0 +1,21 @@
+/*------------------------------
+43. error css
+------------------------------*/
+@use "../utils" as *;
+
+
+
+.ak-error-area {
+    &.is-bottom {
+        padding-bottom: 270px;
+        @media #{$sm,$xs,$xxs}{
+            padding-bottom: 165px;
+        }
+    }
+}
+
+.ak-error-thumb {
+    img {
+        width: 100%;
+    }
+}
